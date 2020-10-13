@@ -21,14 +21,16 @@ public class MyMain {
     // Checks to see if an array contains a geometric series
     public static boolean isGeometric(int[] arr) {
         for(int i = 1; i < arr.length; i++){
-            if (arr[i]/arr[i-1] != arr[1]/arr[0]) return false;
+            double ra = ((double)arr[i])/((double)arr[i-1]);
+            double r= ((double)arr[1])/((double)arr[0]);
+            if (ra!=r) return false;
         }
         return true;
     }
 
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 4, 8, 16, 32};
+        int[] arr = {1, 2, 4, 8, 16, 33};
         System.out.println(Arrays.toString(reverse(arr)));
         System.out.println(secondLargest(arr));
         System.out.println(isGeometric(arr));
